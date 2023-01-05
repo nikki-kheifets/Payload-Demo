@@ -17,8 +17,186 @@ export const Content: Block = {
   },
   fields: [
     {
-      name: 'content',
-      type: 'richText',
+      name: 'backgroundColor',
+      type: 'radio',
+      label: 'Background Color',
+      defaultValue: 'none',
+      admin: {
+        layout: 'horizontal',
+      },
+      options: [
+        {
+          label: 'Red',
+          value: 'red',
+        },
+        {
+          label: 'Blue',
+          value: 'blue',
+        },
+        {
+          label: 'Orange',
+          value: 'orange',
+        },
+        {
+          label: 'None',
+          value: 'none',
+        },
+      ],
+    },
+  ],
+
+  fields: [
+    {
+      name: 'columns',
+      type: 'array',
+      minRows: 1,
+      fields: [
+        {
+          type: 'row',
+          fields: [
+            {
+              name: 'width',
+              label: 'Column Width',
+              type: 'select',
+              defaultValue: 'full',
+              required: true,
+              options: [
+                {
+                  label: 'One Third',
+                  value: 'oneThird',
+                },
+                {
+                  label: 'Half',
+                  value: 'half',
+                },
+                {
+                  label: 'Two Thirds',
+                  value: 'twoThirds',
+                },
+                {
+                  label: 'Full',
+                  value: 'full',
+                },
+              ],
+              admin: {
+                width: '50%',
+              },
+              },
+              {
+                name: 'alignment',
+                label: 'Alignment',
+                type: 'select',
+                defaultValue: 'left',
+                required: true,
+                options: [
+                  {
+                    label: 'Left',
+                    value: 'left',
+                  },
+                  {
+                    label: 'Center',
+                    value: 'center',
+                  },
+                  {
+                    label: 'Right',
+                    value: 'right',
+                  },
+                ],
+                admin: {
+                  width: '50%',
+                },
+              },
+            ],
+        name: 'content',
+        type: 'richText',
+        required: true,
+        },
+      ],
+    },
+    {
+      name: 'accentLine',
+      label: 'Enable Accent Line',
+      type: 'checkbox',
+      defaultValue: false,
+    },
+    {
+      name: 'accentLineAlignment',
+      label: 'Accent Line Alignment',
+      type: 'radio',
+      defaultValue: 'left',
+      options: [
+        {
+          label: 'Left',
+          value: 'left',
+        },
+        {
+          label: 'Right',
+          value: 'right',
+        },
+      ],
+      admin: {
+        condition: (_, siblingData) => siblingData.accentLine,
+        layout: 'horizontal',
+      },
+    },
+    {
+      type: 'row',
+      fields: [
+        {
+          name: 'paddingTop',
+          label: 'Padding Top',
+          type: 'select',
+          defaultValue: 'medium',
+          options: [
+            {
+              label: 'None',
+              value: 'none',
+            },
+            {
+              label: 'Small',
+              value: 'small',
+            },
+            {
+              label: 'Medium',
+              value: 'medium',
+            },
+            {
+              label: 'Large',
+              value: 'large',
+            },
+          ],
+          admin: {
+            width: '50%',
+          },
+        },
+        {
+          name: 'paddingBottom',
+          label: 'Padding Bottom',
+          type: 'select',
+          defaultValue: 'medium',
+          options: [
+            {
+              label: 'None',
+              value: 'none',
+            },
+            {
+              label: 'Small',
+              value: 'small',
+            },
+            {
+              label: 'Medium',
+              value: 'medium',
+            },
+            {
+              label: 'Large',
+              value: 'large',
+            },
+          ],
+          admin: {
+            width: '50%',
+          },
+        },
+      ],
     },
   ],
 };

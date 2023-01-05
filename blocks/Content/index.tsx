@@ -48,8 +48,8 @@ export const Content: Block = {
       type: 'array',
       minRows: 1,
       labels: {
-        singular: 'Column',
-        plural: 'Columns',
+        singular: 'Row',
+        plural: 'Rows',
       },
       fields: [
         {

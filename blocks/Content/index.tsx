@@ -43,13 +43,14 @@ export const Content: Block = {
         },
       ],
     },
-  ],
-
-  fields: [
     {
       name: 'columns',
       type: 'array',
       minRows: 1,
+      labels: {
+        singular: 'Column',
+        plural: 'Columns',
+      },
       fields: [
         {
           type: 'row',
@@ -74,42 +75,44 @@ export const Content: Block = {
                   value: 'twoThirds',
                 },
                 {
-                  label: 'Full',
+                  label: 'Full Width',
                   value: 'full',
                 },
               ],
               admin: {
                 width: '50%',
               },
-              },
-              {
-                name: 'alignment',
-                label: 'Alignment',
-                type: 'select',
-                defaultValue: 'left',
-                required: true,
-                options: [
-                  {
-                    label: 'Left',
-                    value: 'left',
-                  },
-                  {
-                    label: 'Center',
-                    value: 'center',
-                  },
-                  {
-                    label: 'Right',
-                    value: 'right',
-                  },
-                ],
-                admin: {
-                  width: '50%',
+            },
+            {
+              name: 'alignment',
+              label: 'Alignment',
+              type: 'select',
+              defaultValue: 'left',
+              required: true,
+              options: [
+                {
+                  label: 'Left',
+                  value: 'left',
                 },
+                {
+                  label: 'Center',
+                  value: 'center',
+                },
+                {
+                  label: 'Right',
+                  value: 'right',
+                },
+              ],
+              admin: {
+                width: '50%',
               },
-            ],
-        name: 'content',
-        type: 'richText',
-        required: true,
+            },
+          ],
+        },
+        {
+          name: 'content',
+          type: 'richText',
+          required: true,
         },
       ],
     },

@@ -20,9 +20,9 @@ export default buildConfig({
     FormSubmission,
     Category,
   ],
-  globals: [
-    MegaMenu,
-    SocialMedia,
-    Footer,
-  ],
+  // globals: [
+  //   MegaMenu,
+  //   SocialMedia,
+  //   Footer,
+  // ],
 });

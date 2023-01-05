@@ -21,7 +21,7 @@ const ImageCollage: Block = {
       label: 'Images',
       type: 'array',
       minRows: 3,
-      maxRows: 6,
+      maxRows: 6,ßß
       fields: [
         {
           type: 'upload',

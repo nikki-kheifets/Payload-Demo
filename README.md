@@ -20,3 +20,8 @@ This repo contains everything you need to both build your project for production
 
 - To build, run `yarn build` or `npm run build`.
 - To serve, run `yarn serve` or `npm run serve`.
+
+
+## Running Preview
+
+Head to http://localhost:3000/test/preview
